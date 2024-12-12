@@ -247,7 +247,7 @@ app.use((err, req, res, next) => {
 // Dummy data to seed
 const seedData = async () => {
   try {
-    // Users
+    // Seed Users
     const users = await Promise.all([
       createUser({
         username: "john_doe",
@@ -278,8 +278,8 @@ const seedData = async () => {
 
     console.log("Users seeded:", users);
 
-    // Items (Cars)
-    const cars = await Promise.all([
+    // Seed Items
+    const items = await Promise.all([
       createItem({
         name: "Toyota Camry",
         description: "A reliable and fuel-efficient sedan.",
@@ -302,9 +302,9 @@ const seedData = async () => {
       }),
     ]);
 
-    console.log("Items (cars) seeded:", cars);
+    console.log("Items (cars) seeded:", items);
 
-    // Reviews (Generic)
+    // Seed Reviews
     const reviews = await Promise.all([
       createReview({
         user_id: users[0].id,
@@ -322,7 +322,7 @@ const seedData = async () => {
 
     console.log("Reviews seeded:", reviews);
 
-    // Comments (Generic for testing)
+    // Seed Comments
     const comments = await Promise.all([
       createComment({
         user_id: users[1].id,
